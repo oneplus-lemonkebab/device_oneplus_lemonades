@@ -21,7 +21,23 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from lemonades device
 $(call inherit-product, device/oneplus/lemonades/device.mk)
 
-PRODUCT_NAME := lemonades
+# Inherit some common xtended stuff.
+$(call inherit-product, vendor/xtended/config/common.mk)
+
+# FoD Animations
+EXTRA_UDFPS_ANIMATIONS := true
+
+# Maintainer
+XTENDED_BUILD_MAINTAINER := G.H.O.S.T
+
+# Official
+XTENDED_BUILD_TYPE := OFFICIAL
+
+# Boot animation
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# Device identifier
+PRODUCT_NAME := xtended_lemonades
 PRODUCT_DEVICE := lemonades
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
@@ -31,15 +47,5 @@ PRODUCT_SYSTEM_NAME := OnePlus9R
 PRODUCT_SYSTEM_DEVICE := OnePlus9R
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
-
-CUSTOM_BUILD_TYPE := Official
-TARGET_SUPPORTS_QUICK_TAP := true
-WITH_GMS := true
-TARGET_INCLUDE_LIVE_WALLPAPERS := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
-TARGET_SUPPORTS_GOOGLE_RECORDER := true
-USE_PIXEL_CHARGER_IMAGES := true
-TARGET_SUPPORTS_CALL_RECORDING := true
-
 
 BUILD_FINGERPRINT := google/raven/raven:13/TP1A.220905.004/8927612:user/release-keys
