@@ -18,6 +18,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_ODM)/etc/sound_trigger_mixer_paths.xml \
     $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_ODM)/etc/sound_trigger_platform_info.xml
 
+# AOSP Keyboard
+PRODUCT_PACKAGES += \
+    LatinIME
+
 # Device init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
